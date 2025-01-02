@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF编辑工具 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- PDF.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <!-- PDF-lib CDN -->
+    <script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>PDF编辑工具</h1>
+            <p>在线PDF分页编辑与拼接工具</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 工具选择标签页 -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="split">分页编辑</button>
+            <button class="tab-btn" data-tab="merge">PDF拼接</button>
+        </div>
+
+        <!-- 分页编辑面板 -->
+        <section id="splitPanel" class="panel active">
+            <!-- 上传区域 -->
+            <div class="upload-section">
+                <div class="upload-box" id="splitUploadBox">
+                    <input type="file" id="splitFileInput" accept=".pdf" hidden>
+                    <label for="splitFileInput" class="upload-label">
+                        <img src="pdf-icon.svg" alt="上传图标" class="upload-icon">
+                        <span>点击或拖拽PDF文件到这里</span>
+                        <p class="support-text">支持单个PDF文件，最大50MB</p>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 编辑区域 -->
+            <div class="edit-section" id="splitEditSection" style="display: none;">
+                <div class="edit-container">
+                    <!-- 左侧缩略图列表 -->
+                    <div class="thumbnails-container">
+                        <div class="thumbnails-header">
+                            <h3>页面列表</h3>
+                            <span class="page-count">共 0 页</span>
+                        </div>
+                        <div class="thumbnails-list" id="thumbnailsList">
+                            <!-- 缩略图将动态插入这里 -->
+                        </div>
+                    </div>
+
+                    <!-- 右侧预览区域 -->
+                    <div class="preview-container">
+                        <div class="preview-header">
+                            <h3>预览</h3>
+                            <div class="preview-controls">
+                                <button id="prevPage" class="nav-btn" disabled>上一页</button>
+                                <span class="page-info">第 <span id="currentPage">0</span> / <span id="totalPages">0</span> 页</span>
+                                <button id="nextPage" class="nav-btn" disabled>下一页</button>
+                            </div>
+                        </div>
+                        <div class="preview-content">
+                            <canvas id="previewCanvas"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 操作面板 -->
+                <div class="operations-panel">
+                    <div class="split-input">
+                        <label for="pageRangeInput">分割页码：</label>
+                        <input type="text" id="pageRangeInput" placeholder="例如：1-3,5,7-9">
+                        <button id="splitBtn" class="primary-btn">分割PDF</button>
+                    </div>
+                    <button id="downloadBtn" class="primary-btn">下载修改后的PDF</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF拼接面板 -->
+        <section id="mergePanel" class="panel">
+            <!-- 上传区域 -->
+            <div class="upload-section">
+                <div class="upload-box" id="mergeUploadBox">
+                    <input type="file" id="mergeFileInput" accept=".pdf" multiple hidden>
+                    <label for="mergeFileInput" class="upload-label">
+                        <img src="pdf-icon.svg" alt="上传图标" class="upload-icon">
+                        <span>点击或拖拽PDF文件到这里</span>
+                        <p class="support-text">可同时上传多个PDF文件，总大小不超过100MB</p>
+                    </label>
+                </div>
+            </div>
+
+            <!-- PDF文件列表 -->
+            <div class="pdf-list" id="pdfList" style="display: none;">
+                <div class="pdf-list-header">
+                    <h3>PDF文件列表</h3>
+                    <span class="file-count">共 0 个文件</span>
+                </div>
+                <div class="pdf-items" id="pdfItems">
+                    <!-- PDF文件项将动态插入这里 -->
+                </div>
+                <div class="merge-controls">
+                    <button id="mergeBtn" class="primary-btn">合并PDF</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
