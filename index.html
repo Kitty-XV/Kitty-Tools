@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renne的在线工具箱</title>
+    <link rel="stylesheet" href="assets/css/common.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Renne的在线工具箱</h1>
+            <p>简单实用的在线工具集合</p>
+        </div>
+    </header>
+
+    <!-- 搜索区域 -->
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="搜索工具...">
+            <button id="searchBtn">
+                <svg class="search-icon" viewBox="0 0 24 24">
+                    <path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- 工具分类区域 -->
+    <main class="container">
+        <section class="category">
+            <h2>图片处理</h2>
+            <div class="tools-grid" id="imageTools">
+                <a href="tools/image-compressor/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/image-compressor/icon.svg" alt="图片压缩">
+                    </div>
+                    <h3>图片压缩</h3>
+                    <p>在线压缩图片，支持JPG、PNG等格式</p>
+                </a>
+                <!-- 其他图片工具卡片 -->
+            </div>
+        </section>
+
+        <!-- 其他分类 -->
+        <section class="category">
+            <h2>文本处理</h2>
+            <div class="tools-grid" id="textTools">
+                <!-- 文本处理工具卡片 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="assets/js/search.js"></script>
+</body>
+</html> 

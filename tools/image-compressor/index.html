@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片压缩 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>图片压缩工具</h1>
+            <p>简单快捷的图片压缩服务</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 上传区域 -->
+        <section class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="imageInput" accept="image/*" multiple hidden>
+                <label for="imageInput" class="upload-label">
+                    <img src="icon.svg" alt="上传图标" class="upload-icon">
+                    <span>点击或拖拽图片到这里</span>
+                    <p class="support-text">支持PNG、JPG等格式，最多可同时上传10张</p>
+                </label>
+            </div>
+        </section>
+
+        <!-- 预览和控制区域 -->
+        <section class="preview-section" id="previewSection" style="display: none;">
+            <!-- 大图预览区域 -->
+            <div class="main-preview" id="mainPreview">
+                <div class="main-preview-container">
+                    <div class="preview-grid">
+                        <div class="preview-box">
+                            <h3>压缩前</h3>
+                            <div class="image-preview">
+                                <img class="original-preview" alt="原图预览">
+                            </div>
+                            <div class="file-info">
+                                <span>大小：</span>
+                                <span class="original-size">-</span>
+                            </div>
+                        </div>
+                        <div class="preview-arrow">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M16.01 11H4v2h12.01v3L20 12l-3.99-4z"/>
+                            </svg>
+                        </div>
+                        <div class="preview-box">
+                            <h3>压缩后</h3>
+                            <div class="image-preview">
+                                <img class="compressed-preview" alt="压缩预览">
+                            </div>
+                            <div class="file-info">
+                                <span>大小：</span>
+                                <span class="compressed-size">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-preview-info">
+                        <h3 class="filename">未选择图片</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 压缩质量控制区域 -->
+            <div class="batch-controls">
+                <div class="quality-control">
+                    <div class="quality-label">
+                        <label for="qualitySlider">压缩质量：</label>
+                        <span id="qualityLevel" class="quality-level">高质量</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="qualitySlider" min="0" max="100" value="80" step="1">
+                        <div class="quality-marks">
+                            <span class="mark" style="left: 0%">低</span>
+                            <span class="mark" style="left: 40%">中</span>
+                            <span class="mark" style="left: 70%">高</span>
+                            <span class="mark" style="left: 90%">原图</span>
+                        </div>
+                    </div>
+                </div>
+                <button id="downloadAllBtn" class="download-btn">下载所有压缩后的图片</button>
+            </div>
+            
+            <div id="imagesContainer" class="images-container">
+                <!-- 图片预览项会动态插入到这里 -->
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
