@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>时间戳转换 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>时间戳转换工具</h1>
+            <p>Unix时间戳与日期格式互转工具</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 当前时间显示 -->
+        <section class="current-time-panel">
+            <div class="time-display">
+                <div class="time-row">
+                    <div class="time-label">当前时间</div>
+                    <div id="currentDateTime" class="time-value">-</div>
+                </div>
+                <div class="time-row">
+                    <div class="time-label">时间戳</div>
+                    <div id="currentTimestamp" class="time-value">-</div>
+                </div>
+            </div>
+            <div class="button-area">
+                <button id="refreshBtn" class="secondary-btn">刷新时间</button>
+            </div>
+        </section>
+
+        <div class="converter-container">
+            <!-- 时间戳转日期 -->
+            <section class="converter-panel">
+                <h2>时间戳转日期</h2>
+                <div class="input-area">
+                    <input type="number" id="timestampInput" placeholder="输入时间戳（秒/毫秒）">
+                    <button id="nowBtn" class="primary-btn">当前时间</button>
+                </div>
+                <div class="result-area">
+                    <div class="result-item">
+                        <label>日期时间</label>
+                        <div class="result-content">
+                            <input type="text" id="dateTimeOutput" readonly>
+                            <button class="copy-btn" data-target="dateTimeOutput">复制</button>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <label>UTC时间</label>
+                        <div class="result-content">
+                            <input type="text" id="utcOutput" readonly>
+                            <button class="copy-btn" data-target="utcOutput">复制</button>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <label>相对时间</label>
+                        <div class="result-content">
+                            <input type="text" id="relativeOutput" readonly>
+                            <button class="copy-btn" data-target="relativeOutput">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 日期转时间戳 -->
+            <section class="converter-panel">
+                <h2>日期转时间戳</h2>
+                <div class="input-area">
+                    <div class="datetime-picker">
+                        <input type="text" id="dateTimeInput" readonly placeholder="选择日期和时间">
+                        <div class="datetime-popup" id="datetimePopup">
+                            <div class="datetime-content">
+                                <!-- 左侧日历 -->
+                                <div class="calendar-section">
+                                    <div class="datetime-header">
+                                        <button class="month-nav prev">◀</button>
+                                        <span class="current-month">2024年1月</span>
+                                        <button class="month-nav next">▶</button>
+                                    </div>
+                                    <div class="calendar">
+                                        <div class="weekdays">
+                                            <span>日</span><span>一</span><span>二</span><span>三</span><span>四</span><span>五</span><span>六</span>
+                                        </div>
+                                        <div class="days"></div>
+                                    </div>
+                                </div>
+                                <!-- 右侧时间选择 -->
+                                <div class="time-section">
+                                    <div class="time-inputs">
+                                        <div class="time-input-group">
+                                            <label>时</label>
+                                            <input type="number" class="time-input" id="hourInput" min="0" max="23" value="00">
+                                        </div>
+                                        <div class="time-input-group">
+                                            <label>分</label>
+                                            <input type="number" class="time-input" id="minuteInput" min="0" max="59" value="00">
+                                        </div>
+                                        <div class="time-input-group">
+                                            <label>秒</label>
+                                            <input type="number" class="time-input" id="secondInput" min="0" max="59" value="00">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="datetime-footer">
+                                <button class="now-btn">现在</button>
+                                <button class="confirm-btn">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="currentBtn" class="primary-btn">当前时间</button>
+                </div>
+                <div class="result-area">
+                    <div class="result-item">
+                        <label>秒级时间戳</label>
+                        <div class="result-content">
+                            <input type="text" id="secondsOutput" readonly>
+                            <button class="copy-btn" data-target="secondsOutput">复制</button>
+                        </div>
+                    </div>
+                    <div class="result-item">
+                        <label>毫秒级时间戳</label>
+                        <div class="result-content">
+                            <input type="text" id="millisecondsOutput" readonly>
+                            <button class="copy-btn" data-target="millisecondsOutput">复制</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则测试 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>正则表达式测试工具</h1>
+            <p>在线正则表达式测试工具，支持实时匹配</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <div class="regex-container">
+            <!-- 左侧面板：正则输入和测试文本 -->
+            <section class="left-panel">
+                <div class="input-group">
+                    <label>正则表达式：</label>
+                    <div class="regex-input-wrapper">
+                        <span class="regex-delimiter">/</span>
+                        <input type="text" id="regexInput" placeholder="输入正则表达式">
+                        <span class="regex-delimiter">/</span>
+                        <input type="text" id="flagsInput" placeholder="flags" maxlength="5">
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>测试文本：</label>
+                    <textarea id="testInput" placeholder="输入要测试的文本"></textarea>
+                </div>
+                <div class="options">
+                    <label><input type="checkbox" id="highlightMatches">高亮匹配</label>
+                    <label><input type="checkbox" id="multilineMatch">多行匹配</label>
+                </div>
+            </section>
+
+            <!-- 右侧面板：匹配结果和帮助说明 -->
+            <section class="right-panel">
+                <h2>匹配结果</h2>
+                <div class="result-info">
+                    <p>匹配数量：<span id="matchCount">0</span></p>
+                    <button id="copyResultBtn" class="secondary-btn">复制结果</button>
+                </div>
+                <div id="resultList" class="result-list">
+                    <!-- 匹配结果会动态添加到这里 -->
+                </div>
+                <!-- 帮助说明 -->
+                <h2>常用语法说明</h2>
+                <div class="help-content">
+                    <div class="help-group">
+                        <h3>字符类</h3>
+                        <ul>
+                            <li><code>.</code> - 匹配任意字符（除换行符外）</li>
+                            <li><code>\w</code> - 匹配字母、数字、下划线</li>
+                            <li><code>\d</code> - 匹配数字</li>
+                            <li><code>\s</code> - 匹配空白字符</li>
+                        </ul>
+                    </div>
+                    <div class="help-group">
+                        <h3>数量词</h3>
+                        <ul>
+                            <li><code>*</code> - 匹配0次或多次</li>
+                            <li><code>+</code> - 匹配1次或多次</li>
+                            <li><code>?</code> - 匹配0次或1次</li>
+                            <li><code>{n}</code> - 匹配n次</li>
+                            <li><code>{n,}</code> - 匹配n次或更多次</li>
+                            <li><code>{n,m}</code> - 匹配n到m次</li>
+                        </ul>
+                    </div>
+                    <div class="help-group">
+                        <h3>常用标志</h3>
+                        <ul>
+                            <li><code>g</code> - 全局匹配</li>
+                            <li><code>i</code> - 忽略大小写</li>
+                            <li><code>m</code> - 多行匹配</li>
+                            <li><code>s</code> - 允许.匹配换行符</li>
+                            <li><code>u</code> - Unicode模式</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

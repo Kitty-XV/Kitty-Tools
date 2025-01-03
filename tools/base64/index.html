@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base64转换 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/toast.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>Base64转换工具</h1>
+            <p>文本和图片的Base64编码与解码工具</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 转换类型选择 -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="text">文本转换</button>
+            <button class="tab-btn" data-tab="image">图片转换</button>
+        </div>
+
+        <!-- 文本转换面板 -->
+        <section id="textPanel" class="panel active">
+            <div class="input-group">
+                <label>输入文本：</label>
+                <textarea id="textInput" placeholder="请输入要转换的文本"></textarea>
+            </div>
+            <div class="controls">
+                <button id="encodeBtn" class="primary-btn">编码</button>
+                <button id="decodeBtn" class="primary-btn">解码</button>
+                <button id="clearTextBtn" class="secondary-btn">清空</button>
+                <button id="copyTextBtn" class="secondary-btn">复制</button>
+            </div>
+            <div class="output-group">
+                <label>转换结果：</label>
+                <textarea id="textOutput" readonly></textarea>
+            </div>
+        </section>
+
+        <!-- 图片转换面板 -->
+        <section id="imagePanel" class="panel">
+            <div class="upload-section">
+                <div class="upload-box" id="imageUploadBox">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <label for="imageInput" class="upload-label">
+                        <img src="base64-icon.svg" alt="上传图标" class="upload-icon">
+                        <span>点击或拖拽图片到这里</span>
+                        <p class="support-text">支持JPG、PNG等常见图片格式，最大10MB</p>
+                    </label>
+                </div>
+            </div>
+            <div class="preview-section" style="display: none;">
+                <div class="preview-container">
+                    <div class="image-preview">
+                        <img id="imagePreview" alt="图片预览">
+                    </div>
+                    <div class="image-info">
+                        <p>文件名：<span id="fileName">-</span></p>
+                        <p>大小：<span id="fileSize">-</span></p>
+                        <p>类型：<span id="fileType">-</span></p>
+                    </div>
+                </div>
+                <div class="base64-output">
+                    <label>Base64编码：</label>
+                    <textarea id="imageBase64Output" readonly></textarea>
+                    <div class="output-controls">
+                        <button id="copyImageBase64Btn" class="secondary-btn">复制Base64</button>
+                        <button id="downloadImageBtn" class="primary-btn">下载图片</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

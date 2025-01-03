@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>颜色选择器 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>颜色选择器</h1>
+            <p>在线颜色选择与转换工具，支持多种颜色格式</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <div class="color-picker-container">
+            <!-- 颜色选择区域 -->
+            <section class="picker-section">
+                <div class="color-preview" id="colorPreview">
+                    <input type="color" id="colorInput" value="#667eea">
+                </div>
+                <div class="color-sliders">
+                    <div class="slider-group">
+                        <label>R</label>
+                        <input type="range" id="redSlider" min="0" max="255" value="102">
+                        <input type="number" id="redInput" min="0" max="255" value="102">
+                    </div>
+                    <div class="slider-group">
+                        <label>G</label>
+                        <input type="range" id="greenSlider" min="0" max="255" value="126">
+                        <input type="number" id="greenInput" min="0" max="255" value="126">
+                    </div>
+                    <div class="slider-group">
+                        <label>B</label>
+                        <input type="range" id="blueSlider" min="0" max="255" value="234">
+                        <input type="number" id="blueInput" min="0" max="255" value="234">
+                    </div>
+                    <div class="slider-group">
+                        <label>A</label>
+                        <input type="range" id="alphaSlider" min="0" max="100" value="100">
+                        <input type="number" id="alphaInput" min="0" max="100" value="100">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 颜色格式区域 -->
+            <section class="format-section">
+                <div class="format-group">
+                    <label>HEX</label>
+                    <div class="format-input">
+                        <input type="text" id="hexInput" value="#667eea">
+                        <button class="copy-btn" data-format="hex">复制</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>RGB</label>
+                    <div class="format-input">
+                        <input type="text" id="rgbInput" value="rgb(102, 126, 234)" readonly>
+                        <button class="copy-btn" data-format="rgb">复制</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>RGBA</label>
+                    <div class="format-input">
+                        <input type="text" id="rgbaInput" value="rgba(102, 126, 234, 1)" readonly>
+                        <button class="copy-btn" data-format="rgba">复制</button>
+                    </div>
+                </div>
+                <div class="format-group">
+                    <label>HSL</label>
+                    <div class="format-input">
+                        <input type="text" id="hslInput" value="hsl(230, 77%, 66%)" readonly>
+                        <button class="copy-btn" data-format="hsl">复制</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 颜色列表 -->
+            <section class="colors-section">
+                <h2>保存的颜色</h2>
+                <div class="color-list" id="colorList">
+                    <!-- 颜色项会动态添加到这里 -->
+                </div>
+                <button id="saveColorBtn" class="primary-btn">保存当前颜色</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

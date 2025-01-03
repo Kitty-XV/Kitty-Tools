@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const imagesContainer = document.getElementById('imagesContainer');
     const qualitySlider = document.getElementById('qualitySlider');
     const qualityInput = document.getElementById('qualityInput');
-    const downloadAllBtn = document.getElementById('downloadAllBtn');
 
     let imageItems = [];
     const MAX_FILES = 10;
@@ -134,21 +133,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化滑条颜色和质量显示
     qualitySlider.style.setProperty('--value', '80%');
     document.getElementById('qualityLevel').textContent = '高质量';
-
-    // 下载所有图片
-    downloadAllBtn.addEventListener('click', () => {
-        if (imageItems.length === 0) {
-            alert('没有可下载的图片！');
-            return;
-        }
-
-        imageItems.forEach(item => {
-            const link = document.createElement('a');
-            link.download = `compressed-${item.file.name}`;
-            link.href = item.compressedDataUrl;
-            link.click();
-        });
-    });
 
     function handleFiles(files) {
         if (files.length === 0) return;

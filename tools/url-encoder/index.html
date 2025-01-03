@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL编解码 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../assets/css/toast.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>URL编解码工具</h1>
+            <p>URL参数的编码与解码转换工具</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <section class="converter-panel">
+            <div class="input-group">
+                <label>输入文本：</label>
+                <textarea id="input" placeholder="请输入要转换的文本"></textarea>
+            </div>
+            
+            <div class="controls">
+                <div class="mode-select">
+                    <label>
+                        <input type="radio" name="mode" value="component" checked>
+                        组件编码 (encodeURIComponent)
+                    </label>
+                    <label>
+                        <input type="radio" name="mode" value="uri">
+                        URI编码 (encodeURI)
+                    </label>
+                </div>
+                <div class="buttons">
+                    <button id="encodeBtn" class="primary-btn">编码</button>
+                    <button id="decodeBtn" class="primary-btn">解码</button>
+                    <button id="clearBtn" class="secondary-btn">清空</button>
+                    <button id="copyBtn" class="secondary-btn">复制</button>
+                </div>
+            </div>
+            
+            <div class="output-group">
+                <label>转换结果：</label>
+                <textarea id="output" readonly></textarea>
+            </div>
+        </section>
+
+        <!-- 说明区域 -->
+        <section class="info-panel">
+            <h2>编码说明</h2>
+            <div class="info-content">
+                <h3>组件编码 (encodeURIComponent)</h3>
+                <p>将字符串编码为 URI 组件，会编码所有特殊字符，包括 /?:@&=+$,# 等。适用于编码 URL 参数。</p>
+                
+                <h3>URI编码 (encodeURI)</h3>
+                <p>将字符串编码为完整的 URI，不会编码 /?:@&=+$,# 等特殊字符。适用于编码完整 URL。</p>
+                
+                <h3>示例：</h3>
+                <pre>原文：https://example.com/?name=测试&id=123
+组件编码：https%3A%2F%2Fexample.com%2F%3Fname%3D%E6%B5%8B%E8%AF%95%26id%3D123
+URI编码：https://example.com/?name=%E6%B5%8B%E8%AF%95&id=123</pre>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

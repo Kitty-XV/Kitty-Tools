@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文档转换 - Renne的在线工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>文档转换工具</h1>
+            <p>在线Word与PDF文件互转工具</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 转换类型选择 -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="word2pdf">Word转PDF</button>
+            <button class="tab-btn" data-tab="pdf2word">PDF转Word</button>
+        </div>
+
+        <!-- Word转PDF面板 -->
+        <section id="word2pdfPanel" class="panel active">
+            <div class="upload-section">
+                <div class="upload-box" id="wordUploadBox">
+                    <input type="file" id="wordInput" accept=".doc,.docx" multiple hidden>
+                    <label for="wordInput" class="upload-label">
+                        <img src="converter-icon.svg" alt="上传图标" class="upload-icon">
+                        <span>点击或拖拽Word文件到这里</span>
+                        <p class="support-text">支持DOC、DOCX格式，最大50MB</p>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 文件列表 -->
+            <div class="files-list" id="wordFilesList" style="display: none;">
+                <div class="files-header">
+                    <h3>待转换文件</h3>
+                    <span class="file-count">共 0 个文件</span>
+                </div>
+                <div class="file-items" id="wordItems">
+                    <!-- 文件项将动态插入这里 -->
+                </div>
+                <div class="convert-controls">
+                    <button id="convertToPdfBtn" class="primary-btn">开始转换</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF转Word面板 -->
+        <section id="pdf2wordPanel" class="panel">
+            <div class="upload-section">
+                <div class="upload-box" id="pdfUploadBox">
+                    <input type="file" id="pdfInput" accept=".pdf" multiple hidden>
+                    <label for="pdfInput" class="upload-label">
+                        <img src="converter-icon.svg" alt="上传图标" class="upload-icon">
+                        <span>点击或拖拽PDF文件到这里</span>
+                        <p class="support-text">支持PDF格式，最大50MB</p>
+                    </label>
+                </div>
+            </div>
+
+            <!-- 文件列表 -->
+            <div class="files-list" id="pdfFilesList" style="display: none;">
+                <div class="files-header">
+                    <h3>待转换文件</h3>
+                    <span class="file-count">共 0 个文件</span>
+                </div>
+                <div class="file-items" id="pdfItems">
+                    <!-- 文件项将动态插入这里 -->
+                </div>
+                <div class="convert-controls">
+                    <button id="convertToWordBtn" class="primary-btn">开始转换</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <p>© 2024 Renne的在线工具箱 版权所有</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 

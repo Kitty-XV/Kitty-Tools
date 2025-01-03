@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Renne的工具箱</title>
     <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/toast.css">
 </head>
 <body>
     <!-- 头部区域 -->
@@ -54,24 +55,71 @@
                     <h3>PDF编辑</h3>
                     <p>在线PDF分页编辑与拼接，支持页面排序、删除和合并</p>
                 </a>
-                <!-- 其他PDF工具卡片 -->
+                
+                <!-- 添加新的工具卡片 -->
+                <a href="tools/doc-converter/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/doc-converter/converter-icon.svg" alt="文档转换">
+                    </div>
+                    <h3>文档转换</h3>
+                    <p>在线Word与PDF文件互转，支持批量转换</p>
+                </a>
             </div>
         </section>
 
-        <!-- 其他分类 -->
+        <!-- 添加新的工具分类：编码转换 -->
         <section class="category">
-            <h2>文本处理</h2>
-            <div class="tools-grid" id="textTools">
-                <!-- 文本处理工具卡片 -->
+            <h2>编码转换</h2>
+            <div class="tools-grid" id="encodingTools">
+                <a href="tools/base64/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/base64/base64-icon.svg" alt="Base64转换">
+                    </div>
+                    <h3>Base64转换</h3>
+                    <p>文本和图片的Base64编码与解码工具</p>
+                </a>
+                
+                <a href="tools/url-encoder/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/url-encoder/url-icon.svg" alt="URL编解码">
+                    </div>
+                    <h3>URL编解码</h3>
+                    <p>URL参数的编码与解码转换工具</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- 添加新的工具分类：开发辅助 -->
+        <section class="category">
+            <h2>开发辅助</h2>
+            <div class="tools-grid" id="devTools">
+                <a href="tools/color-picker/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/color-picker/color-icon.svg" alt="颜色选择器">
+                    </div>
+                    <h3>颜色选择器</h3>
+                    <p>在线颜色选择与转换工具，支持多种颜色格式</p>
+                </a>
+                
+                <a href="tools/regex-tester/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/regex-tester/regex-icon.svg" alt="正则测试">
+                    </div>
+                    <h3>正则测试</h3>
+                    <p>正则表达式在线测试工具，支持实时匹配</p>
+                </a>
+                
+                <a href="tools/timestamp/index.html" class="tool-card">
+                    <div class="tool-icon">
+                        <img src="tools/timestamp/time-icon.svg" alt="时间戳转换">
+                    </div>
+                    <h3>时间戳转换</h3>
+                    <p>Unix时间戳与日期格式互转工具</p>
+                </a>
             </div>
         </section>
     </main>
 
     <!-- 页脚 -->
     <footer class="footer">
-        <p>© 2024 Renne 版权所有</p>
-    </footer>
-
-    <script src="assets/js/search.js"></script>
-</body>
-</html> 
+        <p>© 
