@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF压缩 - Renne的工具箱</title>
+    <link rel="stylesheet" href="../../assets/css/common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header class="header">
+        <div class="header-content">
+            <h1>PDF压缩</h1>
+            <p>快速压缩PDF文件,节省存储空间</p>
+        </div>
+        <a href="../../index.html" class="back-link">返回工具箱</a>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main class="container">
+        <!-- 上传区域 -->
+        <section class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <input type="file" id="pdfInput" accept=".pdf" hidden>
+                <label for="pdfInput" class="upload-label">
+                    <img src="icon.svg" alt="上传图标" class="upload-icon">
+                    <span>点击或拖拽PDF文件到这里</span>
+                    <p class="support-text">支持单个PDF文件,最大50MB</p>
+                </label>
+            </div>
+        </section>
+
+        <!-- 压缩设置 -->
+        <section class="compress-settings" id="settingsSection" style="display: none;">
+            <h2>压缩设置</h2>
+            <div class="settings-group">
+                <div class="quality-control">
+                    <div class="quality-label">
+                        <span>压缩质量</span>
+                        <span class="quality-level" id="qualityLevel">中等</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="qualitySlider" min="1" max="3" value="2" step="1">
+                        <div class="quality-marks">
+                            <span class="mark" style="left: 0%">低</span>
+                            <span class="mark" style="left: 50%">中</span>
+                            <span class="mark" style="left: 100%">高</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="compressBtn" class="primary-btn">开始压缩</button>
+        </section>
+
+        <!-- 结果预览 -->
+        <section class="result-section" id="resultSection" style="display: none;">
+            <div class="result-info">
+                <div class="file-info">
+                    <h3>压缩结果</h3>
+                    <div class="info-item">
+                        <span>原始大小:</span>
+                        <span id="originalSize">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span>压缩后大小:</span>
+                        <span id="compressedSize">-</span>
+                    </div>
+                    <div class="info-item">
+                        <span>压缩率:</span>
+                        <span id="compressionRatio">-</span>
+                    </div>
+                </div>
+                <button id="downloadBtn" class="primary-btn">下载压缩文件</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
